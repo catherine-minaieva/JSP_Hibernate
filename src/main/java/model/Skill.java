@@ -10,7 +10,8 @@ import java.util.Set;
 @NoArgsConstructor
 @EqualsAndHashCode(exclude = {"developers","companies"})
 @ToString(exclude = {"developers","companies"})
-@Entity(name = "skills")
+@Entity(name = "skill")
+@Table(name = "skills")
 public class Skill implements BaseEntity<Long> {
 
     private static final long serialVersionUID = 8034251749519518623L;

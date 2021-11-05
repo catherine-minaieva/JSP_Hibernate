@@ -12,7 +12,7 @@ import java.util.Set;
 @EqualsAndHashCode(exclude = {"developers", "customers", "companies"})
 @ToString(exclude = {"developers", "customers", "companies"})
 @Entity
-@Table(name = "project")
+@Table(name = "projects")
 public class Project implements BaseEntity<Long> {
 
     private static final long serialVersionUID = -3110977488413061254L;
