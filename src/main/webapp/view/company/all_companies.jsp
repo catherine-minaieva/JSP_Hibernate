@@ -8,6 +8,7 @@
     </style>
 </head>
 <body>
+<c:import url="/view/navigation.jsp"/>
 <table>
     <tbody>
     <c:if test="${not empty companies}">

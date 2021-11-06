@@ -9,7 +9,7 @@
 </head>
 <body>
 <c:import url="/view/navigation.jsp"/>
-<h3>To update Developer set an ID, name, age and new salary: </h3>
+<h3>To update Developer set an ID, name, age, gender and new salary: </h3>
 <form method="post" action="updateDeveloper">
     <table>
         <tbody>
@@ -23,13 +23,19 @@
             <td>
                 <p>Name:</p>
             </td>
-            <td><input type="number" name="name"></td>
+            <td><input type="text" name="name"></td>
         </tr>
         <tr>
             <td>
                 <p>Age:</p>
             </td>
             <td><input type="number" name="age"></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Gender:</p>
+            </td>
+            <td><input type="text" name="gender"></td>
         </tr>
         <tr>
             <td>

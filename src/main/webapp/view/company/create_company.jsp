@@ -9,7 +9,7 @@
 </head>
 <body>
 <c:import url="/view/navigation.jsp"/>
-<h3>To Create Company set an Id, Name and Head Office: </h3>
+<h3>To Create Company set a Name and Head Office: </h3>
 <form method="post" action="createCompany">
     <table>
         <tbody>
@@ -36,7 +36,6 @@
                 <input type="text" name="headOffice" tabindex="3">
             </td>
         </tr>
-
         </tbody>
     </table>
     <button type="submit" class="button">Create</button>

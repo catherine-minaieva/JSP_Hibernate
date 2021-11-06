@@ -37,7 +37,6 @@ public class CompanyRepositoryImpl implements BaseRepository<Company, Long> {
 
     @Override
     public List<Company> findAll() {
-
         try (Session session = getSessionFactory.openSession()) {
             return session.createQuery("from Company", Company.class).list();
         } catch (HibernateException e) {
@@ -61,15 +60,9 @@ public class CompanyRepositoryImpl implements BaseRepository<Company, Long> {
 
     @Override
     public void deleteById(Long id) {
-
-        Transaction transaction = null;
         try (Session session = getSessionFactory.openSession()) {
-            transaction = session.beginTransaction();
-            session.createQuery("delete Company c where c.id=:id")
-                    .setParameter("id", id).executeUpdate();
-            transaction.commit();
+            session.delete(String.valueOf(Company.class), id);
         } catch (HibernateException e) {
-            transactionRollback(transaction);
             throw new HibernateException(e);
         }
     }

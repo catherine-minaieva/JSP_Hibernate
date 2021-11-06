@@ -57,8 +57,8 @@ public class CompanyServlet extends HttpServlet {
             req.setAttribute("message", "New Company created ");
         }
         if (action.startsWith("/findCompany")) {
-             String id = req.getParameter("id");
-             Company company = companyService.findByID(Long.valueOf(id));
+            String id = req.getParameter("id");
+            Company company = companyService.findByID(Long.valueOf(id));
             if (company.getId() == null) {
                 req.setAttribute("message", "Company not found");
             } else {
@@ -67,7 +67,7 @@ public class CompanyServlet extends HttpServlet {
             req.getRequestDispatcher("/view/company/find_company.jsp").forward(req, resp);
         }
 
-        if (action.startsWith ("/deleteCompany")) {
+        if (action.startsWith("/deleteCompany")) {
             Long id = Long.valueOf((req.getParameter("id")));
             Company company = companyService.findByID(id);
             if (company.getId() == null) {
@@ -85,12 +85,16 @@ public class CompanyServlet extends HttpServlet {
 
             if (company.getId() == null) {
                 req.setAttribute("message", "Company not found");
-            } else{
+            } else {
                 Company companyForUpdate = companyService.mapCompany(req);
                 companyService.update(id, companyForUpdate);
                 req.setAttribute("message", "Company updated");
-                req.getRequestDispatcher ("/view/company/update_company.jsp").forward (req, resp);
+                req.getRequestDispatcher("/view/company/update_company.jsp").forward(req, resp);
             }
+        }
+        if (action.startsWith("/allCompanies")) {
+            List<Company> companies = companyService.findAll();
+            req.setAttribute("companies", companies);
         }
     }
 }

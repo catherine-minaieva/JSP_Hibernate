@@ -1,5 +1,6 @@
 package repositoty;
 
+
 import model.Customer;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -24,8 +25,7 @@ public class CustomerRepositoryImpl implements BaseRepository<Customer, Long> {
     @Override
     public Customer findById(Long id) {
         try (Session session = getSessionFactory.openSession()) {
-            return session.createQuery("from Customer c where c.id=:id", Customer.class)
-                    .setParameter("id", id).uniqueResult();
+            return session.get(Customer.class, id);
         } catch (HibernateException e) {
             throw new HibernateException(e);
         }
