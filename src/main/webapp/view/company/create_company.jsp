@@ -13,13 +13,13 @@
 <form method="post" action="createCompany">
     <table>
         <tbody>
-        <tr>
-            <td>
-                <p>ID</p>
-            </td>
-            <td>
-                <input type="text" name="id" tabindex="1"></td>
-        </tr>
+<%--        <tr>--%>
+<%--            <td>--%>
+<%--                <p>ID</p>--%>
+<%--            </td>--%>
+<%--            <td>--%>
+<%--                <input type="text" name="id" tabindex="1"></td>--%>
+<%--        </tr>--%>
         <tr>
         <tr>
             <td>

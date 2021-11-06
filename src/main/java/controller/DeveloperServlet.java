@@ -2,6 +2,7 @@ package controller;
 
 
 import model.Developer;
+import model.Project;
 import repositoty.DeveloperRepositoryImpl;
 import service.DeveloperServiceImpl;
 
@@ -56,20 +57,22 @@ public class DeveloperServlet extends HttpServlet {
             developerService.create(developer);
             req.setAttribute("message", "New developer created: " + developer);
         }
+
         if (action.startsWith("/findDeveloper")) {
             String id = req.getParameter("id");
             Developer developer = developerService.findByID(Long.valueOf(id));
-            if (developer.getId() == null) {
-                req.setAttribute("message", String.format("Developer found: %s", developer));
-            } else {
+            if (developer == null) {
                 req.setAttribute("message", "Developer not found");
+            } else {
+                req.setAttribute("message", String.format("Developer found: %s", developer));
             }
             req.getRequestDispatcher("/view/developer/find_developer.jsp").forward(req, resp);
         }
+
         if (action.startsWith("/deleteDeveloper")) {
             Long id = Long.valueOf((req.getParameter("id")));
             Developer developer = developerService.findByID(id);
-            if (developer.getId() == null) {
+            if (developer == null) {
                 req.setAttribute("message", "Developer not found");
             } else {
                 developerService.delete(id);
@@ -81,14 +84,14 @@ public class DeveloperServlet extends HttpServlet {
         if (action.startsWith("/updateDeveloper")) {
             Long id = Long.valueOf((req.getParameter("id")));
             Developer developer = developerService.findByID(id);
-            if (developer.getId() == null) {
+            if (developer == null) {
                 req.setAttribute("message", "Developer not found");
             } else {
                 Developer developerForUpdate = developerService.mapDeveloper(req);
                 developerService.update(id, developerForUpdate);
                 req.setAttribute("message", "Developer  updated");
+            }
                 req.getRequestDispatcher("/view/developer/update_developer.jsp").forward(req, resp);
             }
-        }
     }
 }

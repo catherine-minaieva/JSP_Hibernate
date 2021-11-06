@@ -60,9 +60,14 @@ public class CompanyRepositoryImpl implements BaseRepository<Company, Long> {
 
     @Override
     public void deleteById(Long id) {
+        Transaction transaction = null;
         try (Session session = getSessionFactory.openSession()) {
-            session.delete(String.valueOf(Company.class), id);
+            transaction = session.beginTransaction();
+            session.createQuery("delete Company c where c.id=:id")
+                    .setParameter("id", id).executeUpdate();
+            transaction.commit();
         } catch (HibernateException e) {
+            transactionRollback(transaction);
             throw new HibernateException(e);
         }
     }

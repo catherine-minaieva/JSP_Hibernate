@@ -43,14 +43,14 @@ public class ProjectService implements BaseService<Project>{
 
     public Project mapProject(HttpServletRequest req) {
 
-        Long id = Long.parseLong(req.getParameter("id").trim());
+        //Long id = Long.parseLong(req.getParameter("id").trim());
         String name = req.getParameter("name").trim();
         String baseTechnology = req.getParameter("baseTechnology").trim();
         String creationDate  = req.getParameter("creationDate").trim();
-        Long cost = Long.parseLong(req.getParameter("cost").trim());
+        Double cost = Double.parseDouble(req.getParameter("cost").trim());
 
         Project project = new Project();
-        project.setId(id);
+        //project.setId(id);
         project.setName(name);
         project.setBaseTechnology(baseTechnology);
         project.setCreationDate(creationDate);

@@ -48,14 +48,14 @@ public class DeveloperServiceImpl implements DeveloperService {
 
     public Developer mapDeveloper(HttpServletRequest req) {
 
-        Long id = Long.parseLong(req.getParameter("id").trim());
+        //Long id = Long.parseLong(req.getParameter("id").trim());
         String name = req.getParameter("name").trim();
         int age = Integer.parseInt(req.getParameter("age").trim());
         String gender = req.getParameter("gender").trim();
         Double salary = Double.parseDouble(req.getParameter("salary").trim());
 
         Developer developer = new Developer();
-        developer.setId(id);
+        //developer.setId(id);
         developer.setName(name);
         developer.setAge(age);
         developer.setGender(gender);

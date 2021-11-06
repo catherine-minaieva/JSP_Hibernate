@@ -2,7 +2,6 @@ package service;
 
 import model.Company;
 import repositoty.CompanyRepositoryImpl;
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.Collection;
 import java.util.List;
@@ -40,23 +39,12 @@ public class CompanyService implements BaseService<Company> {
     }
 
     public Company mapCompany(HttpServletRequest req) {
-        Long id = Long.parseLong(req.getParameter("id").trim());
+        //Long id = Long.parseLong(req.getParameter("id").trim());
         String companyName = req.getParameter("name").trim();
         String headOffice = req.getParameter("headOffice").trim();
 
         Company company = new Company();
-        company.setId(id);
-        company.setName(companyName);
-        company.setHeadOffice(headOffice);
-        return company;
-    }
-
-    public Company mapEditCompany(Company company, HttpServletRequest req) {
-        Long id = Long.parseLong(req.getParameter("id").trim());
-        String companyName = req.getParameter("name").trim();
-        String headOffice = req.getParameter("headOffice").trim();
-
-        company.setId(id);
+        //company.setId(id);
         company.setName(companyName);
         company.setHeadOffice(headOffice);
         return company;

@@ -13,13 +13,13 @@
 <form method="post" action="createProject">
     <table>
         <tbody>
-        <tr>
-            <td>
-                <p>ID</p>
-            </td>
-            <td>
-                <input type="number" name="id" tabindex="1"></td>
-        </tr>
+<%--        <tr>--%>
+<%--            <td>--%>
+<%--                <p>ID</p>--%>
+<%--            </td>--%>
+<%--            <td>--%>
+<%--                <input type="number" name="id" tabindex="1"></td>--%>
+<%--        </tr>--%>
         <tr>
             <td>
                 <p>Name</p>

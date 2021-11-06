@@ -58,7 +58,7 @@ public class ProjectServlet extends HttpServlet {
         if (action.startsWith("/findProject")) {
             String id = req.getParameter("id");
             Project project = projectService.findByID(Long.valueOf(id));
-            if (project.getId() == null) {
+            if (project == null) {
                 req.setAttribute("message", "Project not found");
             } else {
                 req.setAttribute("message", String.format("Project found: %s", project));
@@ -69,7 +69,7 @@ public class ProjectServlet extends HttpServlet {
         if (action.startsWith("/deleteProject")) {
             Long id = Long.valueOf((req.getParameter("id")));
             Project project = projectService.findByID(id);
-            if (project.getId() == null) {
+            if (project == null) {
                 req.setAttribute("message", "Project not found");
             } else {
                 projectService.delete(id);
@@ -81,14 +81,14 @@ public class ProjectServlet extends HttpServlet {
         if (action.startsWith("/updateProject")) {
             Long id = Long.valueOf((req.getParameter("id")));
             Project project = projectService.findByID(id);
-            if (project.getId() == null) {
+            if (project == null) {
                 req.setAttribute("message", "Project not found");
             } else {
                 Project projectForUpdate = projectService.findByID(id);
                 projectService.update(id, projectForUpdate);
                 req.setAttribute("message", "Project  updated");
+            }
                 req.getRequestDispatcher("/view/project/update_project.jsp").forward(req, resp);
             }
-        }
     }
 }

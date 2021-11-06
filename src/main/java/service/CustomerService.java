@@ -2,7 +2,6 @@ package service;
 
 import model.Customer;
 import repositoty.CustomerRepositoryImpl;
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.Collection;
 import java.util.List;
@@ -42,13 +41,13 @@ public class CustomerService implements BaseService<Customer> {
     }
 
     public Customer mapCustomer(HttpServletRequest req) {
-        Long id = Long.parseLong(req.getParameter("id").trim());
-        String name = req.getParameter("customerName").trim();
+        //Long id = Long.parseLong(req.getParameter("id").trim());
+        String name = req.getParameter("name").trim();
         String taxCode = req.getParameter("taxCode".trim());
         String headOffice = req.getParameter("headOffice").trim();
 
         Customer customer = new Customer();
-        customer.setId(id);
+        //customer.setId(id);
         customer.setName(name);
         customer.setTaxCode(taxCode);
         customer.setHeadOffice(headOffice);

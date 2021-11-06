@@ -32,7 +32,7 @@ public class Project implements BaseEntity<Long> {
     private String creationDate;
 
     @Column(name = "cost")
-    private Long cost;
+    private Double cost;
 
     @ManyToMany(mappedBy = "projects")
     private Set<Company> companies;

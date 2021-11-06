@@ -9,7 +9,7 @@
 </head>
 <body>
 <c:import url="/view/navigation.jsp"/>
-<h3>To update Project, provide an ID and new cost: </h3>
+<h3>To update Project, set new an id, name, base technology. creation date and new cost: </h3>
 <form method="post" action="updateProject">
     <table>
         <tbody>
