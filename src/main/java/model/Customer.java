@@ -34,8 +34,8 @@ public class Customer implements BaseEntity<Long>{
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "customers_projects",
-            joinColumns = {@JoinColumn(name = "id_customer")},
-            inverseJoinColumns = {@JoinColumn(name = "id_project")})
+            joinColumns = {@JoinColumn(name = "customer_id")},
+            inverseJoinColumns = {@JoinColumn(name = "project_id")})
     private Set<Project> projects;
 
 }

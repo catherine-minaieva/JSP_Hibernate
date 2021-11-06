@@ -40,8 +40,8 @@ public class Developer implements BaseEntity<Long> {
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "developers_skills",
-            joinColumns = {@JoinColumn(name = "id_developer")},
-            inverseJoinColumns = {@JoinColumn(name = "id_skill")})
+            joinColumns = {@JoinColumn(name = "developer_id")},
+            inverseJoinColumns = {@JoinColumn(name = "skill_id")})
     private Set<Skill> skills;
 }
 

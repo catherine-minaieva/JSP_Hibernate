@@ -11,6 +11,7 @@ UPDATE developers SET salary = 4400 WHERE (id = 8);
 UPDATE developers SET salary = 2600 WHERE (id = 9);
 UPDATE developers SET salary = 1000 WHERE (id = 10);
 
+alter table projects add column creation_date varchar (45);
 UPDATE projects SET creation_date = "1.02.2020" WHERE (id = 1);
 UPDATE projects SET creation_date = "2.03.2020" WHERE (id = 2);
 UPDATE projects SET creation_date = "3.04.2020" WHERE (id = 3);

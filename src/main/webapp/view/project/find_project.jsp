@@ -9,7 +9,7 @@
 </head>
 <body>
 <c:import url="/view/navigation.jsp"/>
-<h3>To delete Project set an ID: </h3>
+<h3>To find Project set an ID: </h3>
 <form method="post" action="findProject">
     <table>
         <tbody>

@@ -5,14 +5,14 @@ CREATE DATABASE IF NOT EXISTS test;
 use test;
 
 CREATE TABLE `companies` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   `head_office` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `customers` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   `tax_code` varchar(45) NOT NULL,
   `head_office` varchar(45) NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE `developers` (
   );
 
 CREATE TABLE `projects` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   `base_technology` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
