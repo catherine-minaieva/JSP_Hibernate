@@ -31,7 +31,7 @@ public class Company implements BaseEntity<Long> {
     @JoinTable(
             name = "companies_projects",
             joinColumns = {@JoinColumn(name = "company_id")},
-            inverseJoinColumns = {@JoinColumn(name = "project-id")})
+            inverseJoinColumns = {@JoinColumn(name = "project_id")})
 
     private Set<Project> projects;
 }
